@@ -1,11 +1,24 @@
-// acpp1.cpp: определ€ет точку входа дл€ консольного приложени€.
-//
+#include <iostream>
+#include <string>
 
-#include "stdafx.h"
-
-
-int _tmain(int argc, _TCHAR* argv[])
+int main()
 {
+
+	// объ€вим переменную, чтоб было где держать входную информацию
+	std::string name;
+
+	// скажем, что нам нужно, и сохраним вход в переменную
+	std::cout << "Who might you be?" << std::endl;
+	std::cin >> name;
+
+	// преобразуем вход
+	//
+	//
+
+	// напечатем результат
+	std::cout << "five pounds of flax, " << name;
+
 	return 0;
 }
 
+	
