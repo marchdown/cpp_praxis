@@ -29,6 +29,11 @@ std::cout << third <<std::endl;
 std::cout << second <<std::endl;
 
 std::cout << first <<std::endl;
+std::cout << name +", left" + " associate";
+// std::cout <<  "right " + "associate, "+ name; 
+std::cout << first <<std::endl;
+
+
 
 	return 0;
 }
