@@ -3,6 +3,7 @@
 #include <ios>
 #include <string>
 #include <vector>
+#include <algorithm>
 
 using std::cin; 		using std::setprecision;
 using std::cout;		using std::string;
@@ -49,12 +50,18 @@ int main(/* int argc, char *argv[] */) {
 	  return 1;
 	  //	  throw();
 	}
+
+	sort(hw.begin(), hw.end());
+	vec_sz mid = size/2;
+	double median;
+	median = size % 2 == 0 ? (hw[mid] + hw[mid-1]) / 2 : hw[mid];
+
 	//calculate and write out the result
-	// streamsize prec = cout.precision();
-	// cout << "Your final grade is " << setprecision(3)
-	// 	<< 0.2 * midterm + 0.4 * final + 0.4 * sum / n 
-	// 	<< setprecision(prec) << endl;
+	 streamsize prec = cout.precision();
+	cout << "Your final grade is " << setprecision(3)
+		<< 0.2 * midterm + 0.4 * final + 0.4 * median
+		<< setprecision(prec) << endl;
 		
-	cout << "Thank you. " <<endl;
+	//	cout << "Thank you. " <<endl;
 	return 0;
 }
