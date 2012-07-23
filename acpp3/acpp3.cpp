@@ -2,10 +2,12 @@
 #include <iomanip>
 #include <ios>
 #include <string>
+#include <vector>
+
 using std::cin; 		using std::setprecision;
 using std::cout;		using std::string;
 using std::endl;		using std::streamsize;
-
+using std::vector;
 //using namespace std;
 
 int main(/* int argc, char *argv[] */) {
@@ -23,13 +25,12 @@ int main(/* int argc, char *argv[] */) {
 	// Ask for homework grades
 	cout << "Please enter all your homework grades, "
 			"Followed by end-of-file (ctrl-d)";
-	/*
+
+	// vector of homework grades, plus a variable to hold number of grades.
 	vector<double> hw;
-	cin >> hw;
-	*/
-	
-	int n = 0;
-	double sum = 0;
+	typedef vector<double>::size_type vec_sz;
+	vec_sz size;
+
 	//a variable in which to read
 	double x;
 	
@@ -37,15 +38,23 @@ int main(/* int argc, char *argv[] */) {
 	// we have read n grades so far, and
 	// sum is the sum of the first count grades
 	while (cin >> x){
-		++n;
-		sum += x;
+	  hw.push_back(x);
 	}
 	
+	size = hw.size();
+	// check that hw is not empty
+	if (size == 0) {
+	  cout << endl << "You must enter grades. "
+	    "Please try again." << endl;
+	  return 1;
+	  //	  throw();
+	}
 	//calculate and write out the result
-	streamsize prec = cout.precision();
-	cout << "Your final grade is " << setprecision(3)
-		<< 0.2 * midterm + 0.4 * final + 0.4 * sum / n 
-		<< setprecision(prec) << endl;
+	// streamsize prec = cout.precision();
+	// cout << "Your final grade is " << setprecision(3)
+	// 	<< 0.2 * midterm + 0.4 * final + 0.4 * sum / n 
+	// 	<< setprecision(prec) << endl;
 		
+	cout << "Thank you. " <<endl;
 	return 0;
 }
